@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%
+	String error = request.getParameter("error");
+	String register = request.getParameter("register");
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,17 +172,24 @@
 			</section>
 				
 			<section class="card">
-				<form name="loginForm" id="loginForm" action="<%=request.getContextPath()%>/LoginServlet" method="post">
+				<form name="loginForm" id="loginForm" action="LoginProcess.jsp" method="post">
 					<div class="row">
 						<input type="email" name="userEmail" placeholder="이메일 입력">
 					</div>
 					
 					<div class="row">
-						<input type="password" name="userPw" placeholder="비밀번호 입력">
+						<input type="password" name="userPassword" placeholder="비밀번호 입력">
 					</div>
 					
 					<button type="submit" class="loginBtn">로그인</button>
 				</form>
+				<% if (error != null) { %>
+					<p style="color:red; margin-top:12px;">아이디 또는 비밀번호가 틀렸습니다.</p>
+				<% } %>
+				
+				<% if (register != null) { %>
+					<p style="color:blue; margin-top:12px;">회원가입이 완료되었습니다. 로그인해주세요.</p>
+				<% } %>
 			</section>
 			
 			<section class="remem">
