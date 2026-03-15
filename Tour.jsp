@@ -11,7 +11,6 @@ if (loginUser == null){  /* 세션에 loginUser이 없다면  */
 }
 %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +28,10 @@ body {
 
 .topHeader {
 	position: fixed;
-	top: 24px;
+	top: 0;
 	left: 0;
 	right: 0;
+	padding-top: 15px;
 	background-color: #fff;
 	z-index: 9999;
 }
@@ -50,6 +50,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: #fff;
 }
 
 .brandText {
