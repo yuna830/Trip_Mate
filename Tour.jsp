@@ -343,7 +343,7 @@ body {
 				        <a href="User.jsp" class="btnUser">사용자 정보</a>
 				    <% } else { %>
 				        <span style="font-size: 14px;"><%= loginUser.split("@")[0] %>님</span>
-				        <a href="<%= request.getContextPath() %>/LogoutServlet" class="btnLogin">로그아웃</a>
+				        <a href="Logout.jsp" class="btnLogin">로그아웃</a>
 				        <a href="User.jsp" class="btnUser">사용자 정보</a>
 				    <% } %>
 				</div>
